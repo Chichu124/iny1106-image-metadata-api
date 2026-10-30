@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "7b1c4e20-9a3e-4b21-8f35-d72bfa038921",
+		"name": "ImageMetadataAPI",
+		"description": "Colección de pruebas para la API Serverless ImageMetadataAPI (INY1106 Evaluación Parcial 2)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Subir Imagen (POST /upload)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/octet-stream",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "Logo_DuocUC.jpg"
+					}
+				},
+				"url": {
+					"raw": "https://er6bwcycph.execute-api.us-east-1.amazonaws.com/prod/upload",
+					"protocol": "https",
+					"host": [
+						"er6bwcycph",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"upload"
+					]
+				},
+				"description": "Sube el logo de Duoc UC en formato JPG al bucket S3 mediante la funcion Lambda upload_image y guarda los metadatos en DynamoDB."
+			},
+			"response": []
+		},
+		{
+			"name": "2. Consultar Metadatos (GET /metadata/{image_id})",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://er6bwcycph.execute-api.us-east-1.amazonaws.com/prod/metadata/8c362766efbe489389a42ca6b7929e60",
+					"protocol": "https",
+					"host": [
+						"er6bwcycph",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"metadata",
+						"8c362766efbe489389a42ca6b7929e60"
+					]
+				},
+				"description": "Obtiene los metadatos del logo de Duoc UC almacenado en DynamoDB mediante la funcion get_image_metadata."
+			},
+			"response": []
+		}
+	]
+}
