@@ -202,8 +202,15 @@ REPORT RequestId: af9c49a7-b6b7-4317-a36f-f63104bbfd92
 ```
 * **Diagnóstico:** La consulta por clave primaria en DynamoDB (`get_item`) demostró alta eficiencia con tan solo 274.84 ms de tiempo de ejecución y 90 MB de memoria utilizada.
 
-#### Evidencia de Métricas en CloudWatch:
-![CloudWatch Monitoring](img/08_cloudwatch_monitoring.png)
+#### Evidencia en CloudWatch de los Flujos de Registros (Logs en Vivo):
+* **Flujo de Registros de `upload_image`:**
+![CloudWatch Logs upload_image](img/12_cloudwatch_log_stream_upload_image.png)
+
+* **Flujo de Registros de `get_image_metadata` (con `Received image_id`):**
+![CloudWatch Logs get_image_metadata](img/13_cloudwatch_log_stream_get_metadata.png)
+
+#### Evidencia del Panel de Monitoreo General de CloudWatch (Métricas, Invocaciones y 0 Errores):
+![CloudWatch General Monitoring](img/14_cloudwatch_monitoring_dashboard_metrics.png)
 
 ---
 
